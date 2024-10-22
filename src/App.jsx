@@ -1,43 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import NewsBoard from "./components/NewsBoard";
+import "./App.css"
 
 const App = () => {
+  const [category, setcategory] = useState("general");
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" href="#">
-          Navbar
-        </a>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+        <li
+          className="navbar-brand"
+          style={{ gap: "19px", fontWeight: "bolder", cursor: "pointer" }}
         >
-          <span className="navbar-toggler-icon"></span>
-        </button>
+          NEWS 18
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+        </li>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div className="navbar-nav">
-            <a className="nav-item nav-link active" href="#">
-              Home <span className="sr-only">(current)</span>
-            </a>
-            <a className="nav-item nav-link" href="#">
-              Features
-            </a>
-            <a className="nav-item nav-link" href="#">
-              Pricing
-            </a>
-            <a className="nav-item nav-link disabled" href="#">
-              Disabled
-            </a>
+          <div
+            className="navbar-nav"
+            style={{ gap: "19px", cursor: "pointer" , }}
+          >
+            <li className="btn" onClick={() => setcategory("technology")} >Technology</li>
+            <li className="btn" onClick={() => setcategory("sports")}>Sports</li>
+            <li className="btn" onClick={() => setcategory("health")}>Health</li>
+            <li className="btn" onClick={() => setcategory("business")}>Business</li>
           </div>
         </div>
       </nav>
       <div style={{ backgroundColor: "black" }}>
-        <NewsBoard></NewsBoard>
+        <NewsBoard category={category} setcategory={setcategory} />
       </div>
     </>
   );

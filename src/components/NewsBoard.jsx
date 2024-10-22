@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
 import NewsItem from "./NewsItem";
 
-const NewsBoard = () => {
+const NewsBoard = ({category}) => {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    let URL = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${
+    let URL = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${
       import.meta.env.VITE_API_KEY
     }`;
 
     fetch(URL)
       .then((response) => response.json())
       .then((data) => setArticles(data.articles));
-  }, []);
+  }, [category]);
 
   // useEffect(() => {https://newsapi.org/v2/top-headlines?country=us&apiKey=2553acf3a776434cb47331bb24136532
   //     let URL = `https://newsapi.org/v2/top-headlines?country=us&apiKey= `;
@@ -52,7 +52,7 @@ const NewsBoard = () => {
               description={news.description}
               src={news.urlToImage}
               url={news.url}
-            />
+              setcategory/>
           );
         })}
       </div>
