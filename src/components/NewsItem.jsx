@@ -12,14 +12,14 @@ const NewsItem = ({ url, src, description, title }) => {
         alt="Card image cap"
         style={{ height: "200px", width: "325px" }}
       />
-      <div className="card-body">
+      <div className="card-body"  style={{display:"flex", justifyContent:"center", flexDirection:"column"}}>
         <h5 className="card-title">{title ? title.slice(0, 50) : Breaking}</h5>
         <p className="card-text">
           {description
             ? description.slice(0, 90)
             : "National Hurricane Center data reports Tropical Storm Oscar, with a maximum sustained wind"}
         </p>
-        <a href={url} className="btn btn-primary">
+        <a href={url} className="btn btn-primary "  >
           Read more
         </a>
       </div>

@@ -27,12 +27,12 @@ const App = () => {
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div
             className="navbar-nav"
-            style={{ gap: "19px", cursor: "pointer" , }}
+            style={{ gap: "12x", cursor: "pointer" }}
           >
-            <li className="btn" onClick={() => setcategory("technology")} >Technology</li>
-            <li className="btn" onClick={() => setcategory("sports")}>Sports</li>
-            <li className="btn" onClick={() => setcategory("health")}>Health</li>
-            <li className="btn" onClick={() => setcategory("business")}>Business</li>
+            <li className="btn2" onClick={() => setcategory("technology")} >Technology</li>
+            <li className="btn2" onClick={() => setcategory("sports")}>Sports</li>
+            <li className="btn2" onClick={() => setcategory("health")}>Health</li>
+            <li className="btn2" onClick={() => setcategory("business")}>Business</li>
           </div>
         </div>
       </nav>
